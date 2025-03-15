@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Quote Display</title>
+</head>
+<body>
+  <h1>Random Quote API Demo</h1>
+  <p>Click the button below to get a random quote from the server:</p>
+  <button id="fetchQuoteBtn">Get Quote</button>
+  <p id="quoteDisplay"></p>
+
+  <script>
+    // Attach an event listener to the button
+    document.getElementById('fetchQuoteBtn').addEventListener('click', function() {
+      // Make a GET request to your API endpoint
+      fetch('/api/quote')
+        .then(response => response.json())
+        .then(data => {
+          // Display the fetched quote in the page
+          document.getElementById('quoteDisplay').innerText = data.quote;
+        })
+        .catch(error => {
+          console.error('Error fetching quote:', error);
+          document.getElementById('quoteDisplay').innerText = 'Error fetching quote.';
+        });
+    });
+  </script>
+</body>
+</html>
