@@ -1,0 +1,15 @@
+{
+  "name": "2.2p",
+  "version": "1.0.0",
+  "description": "OnTrack 2.2P",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Lucas Targett",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
