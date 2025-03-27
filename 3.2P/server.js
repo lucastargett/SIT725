@@ -1,7 +1,7 @@
 var express = require("express");
 const path = require("path");
 var app = express()
-var port = process.env.port || 3000;
+var port = process.env.port || 3001;
 
 // Middleware to parse JSON bodies (for post requests)
 app.use(express.json());
