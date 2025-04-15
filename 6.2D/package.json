@@ -4,7 +4,7 @@
   "description": "OnTrack 2.2P",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --reporter spec",
     "start": "node server.js"
   },
   "author": "Lucas Targett",
@@ -12,5 +12,10 @@
   "dependencies": {
     "express": "^4.21.2",
     "mongoose": "^8.13.1"
+  },
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "mocha": "^11.1.0",
+    "request": "^2.88.2"
   }
 }
