@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>SURFING AUSTRALIA Events</title>
+  <meta name="description" content="basic template for SIT 725 Prac 1" />
+  <meta name="author" content="SitePoint" />
+
+  <!-- Material Icons & Materialize CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="blue-grey lighten-5">
+  <nav>
+    <div class="nav-wrapper orange lighten-5">
+      <div class="container">
+        <a href="#" class="brand-logo">
+          <img class="surf-image-size" src="images/surf.png" alt="Surfing Australia logo" />
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a class="blue-text text-darken-4" target="_blank" href="https://surfingaustralia.com/">
+              SURFING AUSTRALIA
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Main Content -->
+  <main class="main-body">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h1 id="heading" class="center-align">Pick Your Field</h1>
+        </div>
+        <div class="col s12 center-align" style="margin-top: 20px;">
+          <a class="waves-effect waves-light btn click-me-button modal-trigger" id="clickMeButton"
+            data-target="modal1"><i class="material-icons left">auto_fix_high</i>Enter Division</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row" id="card-section">
+        <!-- Cards will be injected here by scripts.js -->
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="row modal-content">
+        <form class="col s12" action="/division/submit" method="POST">
+          <div class="row">
+            <div class="input-field col s12">
+              <select id="division" name="division" required>
+                <option value="" disabled selected>Enter Competition</option>
+                <option value="Grom">Grom</option>
+                <option value="Womens">Womens</option>
+                <option value="Mens">Mens</option>
+                <option value="Adaptive">Adaptive</option>
+              </select>
+              <label for="Division">Pick a Division:</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" name="firstName" type="text" class="validate" required>
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" name="lastName" type="text" class="validate" required>
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" name="password" type="password" class="validate" required>
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" name="email" type="email" class="validate" required>
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 center-align">
+              <button type="submit" class="waves-effect waves-light btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Materialize JS -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/scripts.js" defer></script>
+</body>
+
+</html>
